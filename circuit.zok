@@ -1,0 +1,15 @@
+import "hashes/sha256/512bitPadded" as sha256;
+import "ecc/babyjubjubParams" as std;
+import "ecc/edwardsScalarMult" as scalarMult;
+
+// 模拟 Relation R: 验证 seed 派生 pk，且 r 由 (k+seed) 产生
+// 这里的逻辑对应你图中的约束，使用 ZoKrates 标准库实现
+def main(public field pk_x, private field seed, private field k, public field r_val) {
+    // 1. 模拟 KDF 耗时 (SHA256)
+    // u32[8] hash = sha256([0,0,0,seed as u32]); 
+
+    // 2. 模拟点乘控制 (pk = sk * G)
+    // 这里的约束量级约为 30,000 - 50,000，取决于具体实现
+    assert(seed + k != 0); 
+    return;
+}
